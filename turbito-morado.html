@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbito Morado</title>
+    <style>
+        /*body {
+            background-image: linear-gradient(to bottom left, #512da8, #673ab7, #7e57c2, #9575cd, #b39ddb);
+        }*/
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: -webkit-radial-gradient(circle, #512da8, #673ab7, #7e57c2, #9575cd, #b39ddb) !important;
+            background-image: radial-gradient(circle, #512da8, #673ab7, #7e57c2, #9575cd, #b39ddb) !important;
+        }
+
+        .title-turbito {
+            font-family: Franklin Gothic Heavy, Helvetica Black, Arial Black, Helvetica, sans-serif;
+            color: white;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*background-color: #fff;*/
+            /*padding: 20px;*/
+            /*border-radius: 10px;*/
+            /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+            max-width: 50%;
+            padding-bottom: 2em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                height: 90%;
+            }
+        }
+
+        /* Estilos para la tabla nutricional */
+        .nutritionfacts {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: white;
+            width: 100%;
+        }
+
+        .nutritionfacts a {
+            text-decoration: none;
+            outline: none;
+            color: black;
+            background-color: white;
+        }
+
+        .nftitle {
+            font-family: Franklin Gothic Heavy, Helvetica Black, Arial Black, Helvetica, sans-serif;
+            font-size: 1.3em;
+        }
+
+        .nfservingsize {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            padding-top: 1px;
+            text-align: left !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .nfservingsize {
+                font-size: 14px;
+                line-height: 1.2;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+        .nfnutrient {
+            font-family: Helvetica Black, Arial Black, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            padding-top: 4px;
+            /*letter-spacing: -1px;*/
+        }
+
+        .nfnutrientcontent {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+        }
+
+        .nfright {
+            position: absolute;
+            padding-top: 1px;
+            width: 300px;
+            text-align: right;
+        }
+
+        .nfpercent {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+        }
+
+        .nflabel {
+            font-family: Helvetica Black, Arial Black, Helvetica, Arial, sans-serif;
+            font-size: 0.9em;
+        }
+
+        .nfvit {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            padding-top: 4px;
+        }
+
+        .nfvitright {
+            position: absolute;
+            padding-top: 0;
+            width: 300px;
+            text-align: right;
+        }
+
+        .nfnutrientsubgroup {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            padding-left: 10px;
+            padding-top: 2px;
+        }
+
+        .nfsubright {
+            font-family: Helvetica Black, Arial Black, Helvetica, Arial, sans-serif;
+            position: absolute;
+            margin-top: 0px;
+            width: 197px;
+            text-align: right;
+            line-height: 1em;
+            overflow: hidden;
+        }
+
+        .nfbullet {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 10pt;
+            text-align: center;
+            width: 207px;
+            position: absolute;
+            margin-top: 0px;
+            line-height: 1em;
+            overflow: hidden;
+        }
+
+        .nfmisc {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 0.9em;
+            padding-top: 1px;
+        }
+
+        .nfmisc  > p {
+            margin: 0;
+        }
+
+        .nfingredients,
+        .nfallergen {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            padding: 5px 3px 10px 3px;
+            width: 100%;
+            background-color: white;
+        }
+
+        .nfmanufacturer {
+            font-family: Helvetica Regular, Helvetica, Arial, sans-serif;
+            font-size: 1em;
+            text-align: center;
+            width: 207px;
+            padding-top: 30px;
+        }
+
+        table.nfmisc {
+            border: 0px solid black;
+        }
+
+        table.nfmisc tr {
+            border: 0px solid black;
+        }
+
+        table.nfmisc td {
+            border: 0px solid black;
+        }
+
+        .nfthickrule {
+            padding-top: 1px;
+            border-bottom: 7px solid black;
+        }
+
+        .nfrule {
+            padding-top: 1px;
+            border-bottom: 3px solid black;
+        }
+
+        .nfhairlinerule {
+            padding-top: 1px;
+            border-bottom: 1px solid black;
+        }
+
+        .nfsubhairlinerule {
+            padding-top: 1px;
+            margin-left: 10px;
+            padding-left: 10px;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title-turbito">Turbito Morado</h1>
+        <img src="logo.png" alt="Logo" width="155px">
+        <div class="nutritionfacts">
+            <div class="nftitle">
+                <!--<img src="Images/nutritionFacts.jpg" width="207" border="0" alt="Nutrition Facts">-->
+                Información Nutricional
+            </div>
+            <div class="nfservingsize">
+                Tamaño de porcion 1 Vaso (1,000g)
+                <br>
+                Porciones por contenedor 1
+            </div>
+            <div class="nfthickrule"></div>
+            <div class="nflabel">Cantidad por porción</div>
+            <div class="nfhairlinerule"></div>
+            <div class="nfnutrient">Calorias <span class="nfnutrientcontent">0</span></div>
+            <div class="nfrule"></div>
+            <div class="nflabel">
+                <div class="nfright">%Valor Diario*</div>&nbsp;
+            </div>
+            <div class="nfhairlinerule"></div>
+            <div class="nfnutrient">
+                <div class="nfright">0<span class="nfnutrientcontent">%</span></div>Grasa Total <span
+                    class="nfnutrientcontent">0g</span>
+
+                <div class="nfsubhairlinerule"></div>
+                <div class="nfnutrientsubgroup">Grasas<i>Trans</i> <span class="nfnutrientcontent">1.5g</span></div>
+
+                <div class="nfhairlinerule"></div>
+                <div class="nfright">0<span class="nfnutrientcontent">%</span></div>Sodio <span
+                    class="nfnutrientcontent">5mg</span>
+
+                <div class="nfhairlinerule"></div>
+                <div class="nfright">0<span class="nfnutrientcontent">%</span></div>Potasio <span
+                    class="nfnutrientcontent">0mg</span>
+
+                <div class="nfhairlinerule"></div>
+                <div class="nfright">6<span class="nfnutrientcontent">%</span></div>Carbohidratos Totales <span
+                    class="nfnutrientcontent">18g</span>
+
+                <div class="nfsubhairlinerule"></div>
+                <div class="nfnutrientsubgroup">Azucares <span class="nfnutrientcontent">12g</span></div>
+
+                <div class="nfhairlinerule"></div>
+                Proteina <span class="nfnutrientcontent">20g</span>
+            </div> <!-- End Main Nutrient List -->
+            <div class="nfthickrule"></div>
+
+            <div class="nfvit">
+                <div class="nfvitright">Thiamina 25%</div>
+                <div class="nfbullet">•</div>Vitamin C 110%
+            </div>
+
+            <div class="nfhairlinerule"></div>
+
+            <div class="nfmisc">
+                <p>No es una fuente significativa de calorías de la grasa, grasa saturada, colesterol, fibra dietética,
+                    vitamina A, calcio, hierro.</p>
+
+            </div>
+            <div class="nfhairlinerule"></div>
+
+            <div class="nfmisc">* Porcentaje de los valores se basan en una dieta de 2,000 calorias.</div>
+        </div>
+        <div id="ingredients" class="nfingredients">
+            <b>
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Ingredientes: </font>
+                </font>
+            </b>
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Mora, Hielo, Azucar, Stevia
+                </font>
+            </font>
+        </div>
+    </div>
+</body>
+
+</html>
