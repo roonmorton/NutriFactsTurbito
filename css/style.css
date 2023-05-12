@@ -625,13 +625,19 @@ ul.email li a {
 
 /** end service section **/
 
+.transparente {
+     background-color: rgba(0, 0, 0, 0.5);
+     border: 1px solid rgb(3, 3, 3);
+}
 
 /** about section **/
 
 .about {
-     background: url(../images/about_bg.jpg);
-     background-size: 100% 100%;
-     background-repeat: no-repeat;
+     /*background: url(../images/about_bg.jpg);*/
+     background: url(../images/frutas.jpg) ;
+     background-size: cover;
+     /*background-size: 100% 100%;*/
+     background-repeat: repeat;
      height: 100vh;
      display: flex;
      align-items: center;
